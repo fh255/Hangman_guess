@@ -15,6 +15,9 @@ def choose_random_city():
 random_city = choose_random_city()
 print(random_city)
 
+
+
+# Call the hangman function
 def hangman():
     # Get player name from input
     player_name = input("Set your name: ")
@@ -37,5 +40,37 @@ attempts = 5
 # Display a hint for the first two letters of the city
 print("Here's a hint: First two letters are", city_to_guess[:2])
 
-# Call the hangman function
+while attempts > 0:
+        print("\nAttempts left:", attempts)
+        print("Current Word:", display_word(city_to_guess, guessed_letters))
+
+        guess = input("Enter a letter or the whole word: ").upper()
+
+        if len(guess) == 1:  # Single letter guess
+            if guess in guessed_letters:
+                print("You already guessed that letter. Try again.")
+            elif guess in city_to_guess:
+                print("Good guess!")
+                guessed_letters.append(guess)
+            else:
+                print("Incorrect guess. Try again.")
+                attempts -= 1
+        elif len(guess) == len(city_to_guess) and guess.isalpha():  # Whole word guess
+            if guess == city_to_guess:
+                print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
+                break
+            else:
+                print("Incorrect guess. Try again.")
+                attempts -= 1
+        else:
+            print("Invalid input. Please enter a valid letter or the whole word.")
+
+        if set(city_to_guess) <= set(guessed_letters):
+            print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
+            break
+
+    if attempts == 0:
+        print(f"Sorry, {player_name}, you ran out of attempts. The correct city was:", city_to_guess)
+
+if __name__ == "__main__":
 hangman()

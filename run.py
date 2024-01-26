@@ -8,5 +8,17 @@ def choose_random_city():
               "Oberhausen", "Erfurt", "Mainz", "Rostock", "Kassel", "Hagen", "Saarbrucken", "Hamm", "Potsdam"]
     return random.choice(cities).upper()
 
-# Corrected the spelling of print()
-print(choose_random_city())
+# Get a random city
+random_city = choose_random_city()
+print(random_city)
+
+def hangman():
+    player_name = input("Set your name: ")
+
+    if not player_name:
+        player_name = "Guest"
+        print("No name provided. Defaulting to Guest.")
+
+    print(f"Welcome, {player_name}, to Hangman - Guess the City in Germany!")
+
+hangman()

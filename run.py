@@ -17,6 +17,17 @@ def display_word(word, guessed_letters):
             display += "_"
     return display
 
+def print_rules():
+    print("\nRules for Hangman - Guess the City in Germany:")
+    print("1. You need to guess the name of a city in Germany.")
+    print("2. You can guess a single letter or the entire word.")
+    print("3. You have 6 attempts to guess the word.")
+    print("4. If you guess a letter correctly, it will be revealed in the word.")
+    print("5. If you guess the entire word correctly, you win!")
+    print("6. If you run out of attempts, the correct city will be revealed.")
+    print("7. At any point, you can type '0' to exit or '1' to start a new game.")
+    print("8. Have fun and enjoy the game!\n")
+
 def hangman():
     player_name = input("Set your name: ")
 
@@ -65,4 +76,6 @@ def hangman():
         print(f"Sorry, {player_name}, you ran out of attempts. The correct city was:", city_to_guess)
 
 if __name__ == "__main__":
-    hangman()
+    while True:
+        print_rules()
+        

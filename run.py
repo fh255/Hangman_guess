@@ -1,6 +1,12 @@
 import random
 
 def choose_random_city():
+    """
+    Choose a random city from the predefined list.
+    
+    Returns:
+    str: A random city name in uppercase.
+    """
     cities = ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Dusseldorf", "Dortmund", "Essen",
               "Leipzig", "Bremen", "Dresden", "Hanover", "Nuremberg", "Duisburg", "Bochum", "Wuppertal", "Bielefeld",
               "Bonn", "Mannheim", "Karlsruhe", "Wiesbaden", "Munster", "Gelsenkirchen", "Augsburg", "Moenchengladbach",
@@ -9,6 +15,16 @@ def choose_random_city():
     return random.choice(cities).upper()
 
 def display_word(word, guessed_letters):
+    """
+    Display the current state of the word with revealed letters.
+    
+    Parameters:
+    word (str): The word to be guessed.
+    guessed_letters (list): List of guessed letters.
+    
+    Returns:
+    str: Current state of the word with revealed letters.
+    """
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -18,6 +34,9 @@ def display_word(word, guessed_letters):
     return display
 
 def print_rules():
+    """
+    Print the rules of the Hangman game.
+    """
     print("\nRules for Hangman - Guess the City in Germany:")
     print("1. You need to guess the name of a city in Germany.")
     print("2. You can guess a single letter or the entire word.")
@@ -29,6 +48,9 @@ def print_rules():
     print("8. Have fun and enjoy the game!\n")
 
 def play_hangman():
+    """
+    Main function to play the Hangman game.
+    """
     player_name = input("Set your name: ")
 
     if not player_name:

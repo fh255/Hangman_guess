@@ -17,7 +17,18 @@ def display_word(word, guessed_letters):
             display += "_"
     return display
 
-def hangman():
+def print_rules():
+    print("\nRules for Hangman - Guess the City in Germany:")
+    print("1. You need to guess the name of a city in Germany.")
+    print("2. You can guess a single letter or the entire word.")
+    print("3. You have 6 attempts to guess the word.")
+    print("4. If you guess a letter correctly, it will be revealed in the word.")
+    print("5. If you guess the entire word correctly, you win!")
+    print("6. If you run out of attempts, the correct city will be revealed.")
+    print("7. At any point, you can type '0' to exit or '1' to start a new game.")
+    print("8. Have fun and enjoy the game!\n")
+
+def play_hangman():
     player_name = input("Set your name: ")
 
     if not player_name:
@@ -36,7 +47,14 @@ def hangman():
         print("\nAttempts left:", attempts)
         print("Current Word:", display_word(city_to_guess, guessed_letters))
 
-        guess = input("Enter a letter or the whole word: ").upper()
+        guess = input("Enter a letter or the whole word (type '0' to exit, '1' for a new game): ").upper()
+
+        if guess == '0':
+            print("Exiting the game.")
+            return
+        elif guess == '1':
+            print("Starting a new game.")
+            play_hangman()
 
         if len(guess) == 1:  # Single letter guess
             if guess in guessed_letters:
@@ -50,7 +68,7 @@ def hangman():
         elif len(guess) == len(city_to_guess) and guess.isalpha():  # Whole word guess
             if guess == city_to_guess:
                 print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
-                break
+                return
             else:
                 print("Incorrect guess. Try again.")
                 attempts -= 1
@@ -59,10 +77,15 @@ def hangman():
 
         if set(city_to_guess) <= set(guessed_letters):
             print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
-            break
+            return
 
     if attempts == 0:
         print(f"Sorry, {player_name}, you ran out of attempts. The correct city was:", city_to_guess)
 
 if __name__ == "__main__":
-    hangman()
+    while True:
+        print_rules()
+        play_hangman()
+        play_again = input("Do you want to play again? (Y/N): ").lower()
+        if play_again != 'y':
+            break

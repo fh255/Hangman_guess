@@ -1,6 +1,12 @@
 import random
 
 def choose_random_city():
+    """
+    Choose a random city from the predefined list.
+    
+    Returns:
+    str: A random city name in uppercase.
+    """
     cities = ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Dusseldorf", "Dortmund", "Essen",
               "Leipzig", "Bremen", "Dresden", "Hanover", "Nuremberg", "Duisburg", "Bochum", "Wuppertal", "Bielefeld",
               "Bonn", "Mannheim", "Karlsruhe", "Wiesbaden", "Munster", "Gelsenkirchen", "Augsburg", "Moenchengladbach",
@@ -9,6 +15,16 @@ def choose_random_city():
     return random.choice(cities).upper()
 
 def display_word(word, guessed_letters):
+    """
+    Display the current state of the word with revealed letters.
+    
+    Parameters:
+    word (str): The word to be guessed.
+    guessed_letters (list): List of guessed letters.
+    
+    Returns:
+    str: Current state of the word with revealed letters.
+    """
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -18,6 +34,9 @@ def display_word(word, guessed_letters):
     return display
 
 def print_rules():
+    """
+    Print the rules of the Hangman game.
+    """
     print("\nRules for Hangman - Guess the City in Germany:")
     print("1. You need to guess the name of a city in Germany.")
     print("2. You can guess a single letter or the entire word.")
@@ -28,7 +47,10 @@ def print_rules():
     print("7. At any point, you can type '0' to exit or '1' to start a new game.")
     print("8. Have fun and enjoy the game!\n")
 
-def hangman():
+def play_hangman():
+    """
+    Main function to play the Hangman game.
+    """
     player_name = input("Set your name: ")
 
     if not player_name:
@@ -47,7 +69,14 @@ def hangman():
         print("\nAttempts left:", attempts)
         print("Current Word:", display_word(city_to_guess, guessed_letters))
 
-        guess = input("Enter a letter or the whole word: ").upper()
+        guess = input("Enter a letter or the whole word (type '0' to exit, '1' for a new game): ").upper()
+
+        if guess == '0':
+            print("Exiting the game.")
+            return
+        elif guess == '1':
+            print("Starting a new game.")
+            play_hangman()
 
         if len(guess) == 1:  # Single letter guess
             if guess in guessed_letters:
@@ -61,7 +90,7 @@ def hangman():
         elif len(guess) == len(city_to_guess) and guess.isalpha():  # Whole word guess
             if guess == city_to_guess:
                 print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
-                break
+                return
             else:
                 print("Incorrect guess. Try again.")
                 attempts -= 1
@@ -70,7 +99,7 @@ def hangman():
 
         if set(city_to_guess) <= set(guessed_letters):
             print(f"Congratulations, {player_name}! You guessed the city correctly:", city_to_guess)
-            break
+            return
 
     if attempts == 0:
         print(f"Sorry, {player_name}, you ran out of attempts. The correct city was:", city_to_guess)
@@ -78,4 +107,7 @@ def hangman():
 if __name__ == "__main__":
     while True:
         print_rules()
-        
+        play_hangman()
+        play_again = input("Do you want to play again? (Y/N): ").lower()
+        if play_again != 'y':
+            break

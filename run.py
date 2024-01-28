@@ -51,14 +51,6 @@ def play_hangman():
     """
     Main function to play the Hangman game.
     """
-    player_name = input("Set your name: ")
-
-    if not player_name:
-        player_name = "Guest"
-        print("No name provided. Defaulting to Guest.")
-
-    print(f"Welcome, {player_name}, to Hangman - Guess the City in Germany!")
-
     city_to_guess = choose_random_city()
     guessed_letters = []
     attempts = 6
@@ -105,6 +97,13 @@ def play_hangman():
         print(f"Sorry, {player_name}, you ran out of attempts. The correct city was:", city_to_guess)
 
 if __name__ == "__main__":
+    player_name = input("Set your name: ")
+
+    if not player_name:
+        player_name = "Guest"
+        print("No name provided. Defaulting to Guest.")
+
+    print(f"Welcome, {player_name}, to Hangman - Guess the City in Germany!")
     while True:
         print_rules()
         play_hangman()

@@ -1,32 +1,61 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman - Guess the City in Germany
 
-Welcome,
+Welcome to Hangman - Guess the City in Germany! This is a simple text-based Hangman game where you try to guess the name of a city in Germany. Have fun and enjoy the game!
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Getting Started
 
-## Reminders
+1. Make sure you have Python installed on your system.
+2. Clone this repository:
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+    ```bash
+    git clone https://hangman-guess-german-city-a1d4f2c4de91.herokuapp.com/
+    cd hangman-german-cities
+    ```
 
-## Creating the Heroku app
+3. Create a virtual environment (optional but recommended):
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
 
-1. `heroku/python`
-2. `heroku/nodejs`
+4. Install the required dependencies:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+5. Set up the game:
 
-Connect your GitHub repository and deploy as normal.
+    - Create a JSON file named `cities.json` with a list of cities in Germany.
+    - Update the file path in the code to point to your `cities.json`:
 
-## Constraints
+        ```python
+        cities_file_path = 'path/to/cities.json'
+        ```
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## How to Play
 
----
+1. Run the game:
 
-Happy coding!
+    ```bash
+    python3 run.py
+    ```
+
+2. Enter your name when prompted.
+
+3. Follow the on-screen instructions to guess the city. You can guess a single letter or the entire word.
+
+4. Have fun playing and try to guess the city correctly within 6 attempts!
+
+## Rules
+
+- You need to guess the name of a city in Germany.
+- You can guess a single letter or the entire word.
+- You have 6 attempts to guess the word.
+- If you guess a letter correctly, it will be revealed in the word.
+- If you guess the entire word correctly, you win!
+- If you run out of attempts, the correct city will be revealed.
+- At any point, you can type '0' to exit or '1' to start a new game.
+
+

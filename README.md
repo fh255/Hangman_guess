@@ -42,6 +42,10 @@ So that the player can have an entertaining and challenging experience while tes
    - Develop an enjoyable and straightforward gaming experience.
  
 ### Structure
+
+The game incorporates a systematic sequence of logical steps to ensure smooth navigation. The user is guided with clear instructions at each stage, facilitating a better understanding of the required inputs and aiding in decision-making. Additionally, every user action prompts a corresponding response, providing feedback in either a positive or negative manner.
+
+The game's overall logic is outlined in the following general flowchart, illustrating the key steps and interactions within the gameplay.
 ![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9de26be3-dae1-4ba7-ae1b-97f2cc2ccbb8)
 
 

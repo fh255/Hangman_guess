@@ -1,41 +1,46 @@
+<h1 align="center" > Hangman - Guess the City in Germany</h1>
+
+[View the project here](<https://hangman-guess-german-city-a1d4f2c4de91.herokuapp.com>)
+
+Hangman - Guess the City in Germany is a text-based Python game where players attempt to guess the name of a city in Germany. The game provides a set of rules and challenges the player to guess the city by suggesting letters or entering the entire word within a limited number of attempts.
+
 <img width="1005" alt="Screenshot 2024-01-30 at 16 29 57" src="https://github.com/fh255/Hangman_guess/assets/34744096/0b2676d1-ba58-4f2a-bc0e-84cf5e7a6384">
 
 
-# Hangman - Guess the City in Germany
+## Index
 
-Welcome to Hangman - Guess the City in Germany! This is a simple text-based Hangman game where you try to guess the name of a city in Germany. Have fun and enjoy the game!
+* [User Story](url)
+   - [Stratagy](url)
+* [Features](url)
+* [Technologies](url)
+* [Deployment](url)
+* [Testing](url)
+* [Credit](url)
 
-## Getting Started
+## User Story
 
-1. Make sure you have Python installed on your system.
-2. Clone this repository:
+The player wants to play a game where s/he can guess the name of a city in Germany by either guessing a single letter or the entire word,
+So that the player can have an entertaining and challenging experience while testing her/his knowledge of German cities.
 
-    ```bash
-    git clone https://hangman-guess-german-city-a1d4f2c4de91.herokuapp.com/
-    cd hangman-german-cities
-    ```
-
-3. Create a virtual environment (optional but recommended):
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-4. Install the required dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5. Set up the game:
-
-    - Create a JSON file named `cities.json` with a list of cities in Germany.
-    - Update the file path in the code to point to your `cities.json`:
-
-        ```python
-        cities_file_path = 'path/to/cities.json'
-        ```
+### Strategy
+- Reasons to play this game
+   - this game is a simple and fun word-guessing game that provides entertainment and amusement for players.
+   - The game offers a challenge as players try to guess the correct city in Germany within a 6 attempts.
+   - This helps to test his/ her knowldge about the cities in Germany.
+### Scope
+- User Expectations
+  - Provide straightforward instructions on how to play the game.
+  - Display the number of attempts remaining.
+  - Issue warning messages when errors occur.
+  - Allow the user to restart the game at any point.
+  - Provide an option to exit the game at any time.
+  - Ensure that words in the game belong to specific categories.
+  - After each round, offer the option to play a new round or exit the game.
+- Developer Expectations
+   - Comment the code comprehensively for easy maintenance and understanding.
+   - Develop an enjoyable and straightforward gaming experience.
+ 
+  
 
 ## How to Play
 

@@ -11,6 +11,7 @@ Hangman - Guess the City in Germany is a text-based Python game where players at
 
 * [User Story](url)
    - [Stratagy](url)
+   - [Scope](url)
 * [Features](url)
 * [Technologies](url)
 * [Deployment](url)
@@ -40,7 +41,9 @@ So that the player can have an entertaining and challenging experience while tes
    - Comment the code comprehensively for easy maintenance and understanding.
    - Develop an enjoyable and straightforward gaming experience.
  
-  
+### Structure
+![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9de26be3-dae1-4ba7-ae1b-97f2cc2ccbb8)
+
 
 ## How to Play
 

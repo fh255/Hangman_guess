@@ -1,3 +1,6 @@
+<img width="1005" alt="Screenshot 2024-01-30 at 16 29 57" src="https://github.com/fh255/Hangman_guess/assets/34744096/0b2676d1-ba58-4f2a-bc0e-84cf5e7a6384">
+
+
 # Hangman - Guess the City in Germany
 
 Welcome to Hangman - Guess the City in Germany! This is a simple text-based Hangman game where you try to guess the name of a city in Germany. Have fun and enjoy the game!

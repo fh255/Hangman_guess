@@ -68,19 +68,31 @@ The game is crafted to adopt a subtly more user-friendly visual scheme. Distinct
 ![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9de26be3-dae1-4ba7-ae1b-97f2cc2ccbb8)
 
 
-## How to Play
+## Features
 
-1. Run the game:
 
-    ```bash
-    python3 run.py
-    ```
+## Technologies
+### Programming Language
+- [Python 3.8.11]([url](https://www.python.org/))
+### Tools
+- [Gitpod]([url](https://gitpod.io/new)): Version control was implemented through the Gitpod terminal, allowing for seamless committing to Git and pushing changes to GitHub.
+- [Github]([url](https://github.com/)): Utilized for managing the Gitpod terminal, executing Git commits, and pushing changes to GitHub.
+- [Heroku]([url](https://id.heroku.com/login)): Was used to deploy the project.
+- [draw.io]([url](https://app.diagrams.net/)): Was used to draw the flowchart.
 
-2. Enter your name when prompted.
+## Deployment
 
-3. Follow the on-screen instructions to guess the city. You can guess a single letter or the entire word.
 
-4. Have fun playing and try to guess the city correctly within 6 attempts!
+## Testing
+
+
+
+## Credit
+
+
+
+
+
 
 
 

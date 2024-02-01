@@ -9,6 +9,7 @@ Hangman - Guess the City in Germany is a text-based Python game where players at
 
 ## Index
 
+* [how to play](url)
 * [User Story](url)
    - [Stratagy](url)
    - [Scope](url)
@@ -18,6 +19,22 @@ Hangman - Guess the City in Germany is a text-based Python game where players at
 * [Deployment](url)
 * [Testing](url)
 * [Credit](url)
+
+## How to Play
+
+1. Run the game:
+
+    ```bash
+    python3 run.py
+    ```
+
+2. Enter your name when prompted.
+
+3. Follow the on-screen instructions to guess the city. You can guess a single letter or the entire word.
+
+4. Have fun playing and try to guess the city correctly within 6 attempts!
+
+
 
 ## User Story
 
@@ -44,8 +61,8 @@ So that the player can have an entertaining and challenging experience while tes
  
 ### Structure
 
-The game incorporates a systematic sequence of logical steps to ensure smooth navigation. The user is guided with clear instructions at each stage, facilitating a better understanding of the required inputs and aiding in decision-making. Additionally, every user action prompts a corresponding response, providing feedback in either a positive or negative manner.
-The game's overall logic is outlined in the following general flowchart, illustrating the key steps and interactions within the gameplay.
+The game incorporates a systematic sequence of logical steps to ensure smooth navigation. The user is guided with clear instructions at each stage, facilitating a better understanding of the required inputs and aiding in decision-making. Additionally, every user action prompts a corresponding response, providing feedback in either a positive or negative manner.The game's overall logic is outlined in the following general flowchart, illustrating the key steps and interactions within the gameplay.
+
 The game is crafted to adopt a subtly more user-friendly visual scheme. Distinct line designs mark significant shifts in the game, including the commencement and conclusion of each round, after every attempt, and when presenting the game rules. Furthermore, the inclusion of new lines at the conclusion of each message facilitates user interaction, allowing them to initiate a new game or exit at their convenience.
 
 ![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9de26be3-dae1-4ba7-ae1b-97f2cc2ccbb8)
@@ -65,14 +82,6 @@ The game is crafted to adopt a subtly more user-friendly visual scheme. Distinct
 
 4. Have fun playing and try to guess the city correctly within 6 attempts!
 
-## Rules
 
-- You need to guess the name of a city in Germany.
-- You can guess a single letter or the entire word.
-- You have 6 attempts to guess the word.
-- If you guess a letter correctly, it will be revealed in the word.
-- If you guess the entire word correctly, you win!
-- If you run out of attempts, the correct city will be revealed.
-- At any point, you can type '0' to exit or '1' to start a new game.
 
 

@@ -2,14 +2,42 @@ import json
 import random
 
 def load_cities_from_json(file_path):
+    """
+    Loads a list of cities in Germany from a JSON file.
+
+    Parameters:
+    - file_path (str): The path to the JSON file containing city data.
+
+    Returns:
+    - list: A list of city names.
+    """
     with open(file_path, 'r') as file:
         data = json.load(file)
         return data["cities"]
 
 def choose_random_city(cities):
+    """
+    Chooses a random city from the given list of cities and converts it to uppercase.
+
+    Parameters:
+    - cities (list): List of city names.
+
+    Returns:
+    - str: A randomly selected city name in uppercase.
+    """
     return random.choice(cities).upper()
 
 def display_word(word, guessed_letters):
+    """
+    Generates a display string for the word, with guessed letters revealed and others as underscores.
+
+    Parameters:
+    - word (str): The word to be displayed.
+    - guessed_letters (list): List of letters that have been guessed.
+
+    Returns:
+    - str: The word with guessed letters revealed and others as underscores.
+    """
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -19,6 +47,9 @@ def display_word(word, guessed_letters):
     return display
 
 def print_rules():
+    """
+    Prints the rules for the Hangman game.
+    """
     print("\nRules for Hangman - Guess the City in Germany:")
     print("1. You need to guess the name of a city in Germany.")
     print("2. You can guess a single letter or the entire word.")
@@ -30,6 +61,12 @@ def print_rules():
     print("8. Have fun and enjoy the game!\n")
 
 def play_hangman(cities):
+    """
+    Plays the Hangman game using a randomly selected city from the given list.
+
+    Parameters:
+    - cities (list): List of city names.
+    """
     city_to_guess = choose_random_city(cities)
     guessed_letters = []
     attempts = 6

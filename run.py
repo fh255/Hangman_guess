@@ -81,7 +81,7 @@ def play_hangman(cities):
 
         if guess == '0':
             print("Exiting the game.")
-            return
+            exit()
         elif guess == '1':
             print("Starting a new game.")
             play_hangman(cities)

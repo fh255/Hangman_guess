@@ -133,7 +133,7 @@ if __name__ == "__main__":
     cities_file_path = 'cities.json'
     cities = load_cities_from_json(cities_file_path)
 
-    player_name = input("Set your name (You can use both number and letter): ")
+    player_name = input("Set your name : ")
 
     if not player_name:
         player_name = "Guest"

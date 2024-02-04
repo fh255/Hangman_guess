@@ -43,7 +43,7 @@ def display_word(word, guessed_letters):
         if letter in guessed_letters:
             display += letter
         else:
-            display += "_"
+            display += "_ "
     return display
 
 def print_rules():

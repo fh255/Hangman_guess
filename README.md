@@ -1,99 +1,144 @@
-<h1 align="center" > Hangman - Guess the City in Germany</h1>
+import json
+import random
 
-[View the project here](<https://hangman-guess-german-city-a1d4f2c4de91.herokuapp.com>)
+def load_cities_from_json(file_path):
+    """
+    Loads a list of cities in Germany from a JSON file.
 
-Hangman - Guess the City in Germany is a text-based Python game where players attempt to guess the name of a city in Germany. The game provides a set of rules and challenges the player to guess the city by suggesting letters or entering the entire word within a limited number of attempts.
+    Parameters:
+    - file_path (str): The path to the JSON file containing city data.
 
-<img width="1005" alt="Screenshot 2024-01-30 at 16 29 57" src="https://github.com/fh255/Hangman_guess/assets/34744096/0b2676d1-ba58-4f2a-bc0e-84cf5e7a6384">
+    Returns:
+    - list: A list of city names.
+    """
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        return data["cities"]
 
+def choose_random_city(cities):
+    """
+    Chooses a random city from the given list of cities and converts it to uppercase.
 
-## Index
+    Parameters:
+    - cities (list): List of city names.
 
-* [how to play](url)
-* [User Story](url)
-   - [Stratagy](url)
-   - [Scope](url)
-   - [Structure](url)
-* [Features](url)
-* [Technologies](url)
-* [Deployment](url)
-* [Testing](url)
-* [Credit](url)
+    Returns:
+    - str: A randomly selected city name in uppercase.
+    """
+    return random.choice(cities).upper()
 
-## How to Play
+def display_word(word, guessed_letters):
+    """
+    Generates a display string for the word, with guessed letters revealed and others as underscores.
 
-1. Run the game:
+    Parameters:
+    - word (str): The word to be displayed.
+    - guessed_letters (list): List of letters that have been guessed.
 
-    ```bash
-    python3 run.py
-    ```
+    Returns:
+    - str: The word with guessed letters revealed and others as underscores.
+    """
+    display = ""
+    for letter in word:
+        if letter in guessed_letters:
+            display += letter
+        else:
+            display += "_"
+    return display
 
-2. Enter your name when prompted.
+def print_rules():
+    """
+    Prints the rules for the Hangman game.
+    """
+    print("\nRules for Hangman - Guess the City in Germany:")
+    print("1. You need to guess the name of a city in Germany.")
+    print("2. You can guess a single letter or the entire word.")
+    print("3. You have 6 attempts to guess the word.")
+    print("4. If you guess a letter correctly, it will be revealed in the word.")
+    print("5. If you guess the entire word correctly, you win!")
+    print("6. If you run out of attempts, the correct city will be revealed.")
+    print("7. At any point, you can type '0' to exit or '1' to start a new game.")
+    print("8. Have fun and enjoy the game!\n")
 
-3. Follow the on-screen instructions to guess the city. You can guess a single letter or the entire word.
+def play_hangman(cities):
+    """
+    Plays the Hangman game using a randomly selected city from the given list.
 
-4. Have fun playing and try to guess the city correctly within 6 attempts!
+    Parameters:
+    - cities (list): List of city names.
+    """
+    city_to_guess = choose_random_city(cities)
+    guessed_letters = []
+    attempts = 6
 
+    print("Here's a hint: First two letters are", city_to_guess[:2])
 
+    while attempts > 0:
+        print("\nAttempts left:", attempts)
+        print("Current Word:", display_word(city_to_guess, guessed_letters))
 
-## User Story
+        guess = input("Enter a letter (or the whole word at once), type '0' to exit, or '1' for a new game: ").upper()
 
-The player wants to play a game where s/he can guess the name of a city in Germany by either guessing a single letter or the entire word,
-So that the player can have an entertaining and challenging experience while testing her/his knowledge of German cities.
+        if guess == '0':
+            print("Exiting the game.")
+            exit()
+        elif guess == '1':
+            print("Starting a new game.")
+            play_hangman(cities)
 
-### Strategy
-- Reasons to play this game
-   - this game is a simple and fun word-guessing game that provides entertainment and amusement for players.
-   - The game offers a challenge as players try to guess the correct city in Germany within a 6 attempts.
-   - This helps to test his/ her knowldge about the cities in Germany.
-### Scope
-- User Expectations
-  - Provide straightforward instructions on how to play the game.
-  - Display the number of attempts remaining.
-  - Issue warning messages when errors occur.
-  - Allow the user to restart the game at any point.
-  - Provide an option to exit the game at any time.
-  - Ensure that words in the game belong to specific categories.
-  - After each round, offer the option to play a new round or exit the game.
-- Developer Expectations
-   - Comment the code comprehensively for easy maintenance and understanding.
-   - Develop an enjoyable and straightforward gaming experience.
- 
-### Structure
+        if len(guess) == 1:  # Single letter guess
+            if guess in guessed_letters:
+                print("You already guessed that letter. Try again.")
+            elif guess in city_to_guess:
+                print("Good guess!")
+                guessed_letters.append(guess)
+            else:
+                print("Incorrect guess. Try again.")
+                attempts -= 1
+        elif guess.isalpha():  # Multiple letters or whole word guess
+            if len(guess) == len(city_to_guess) and guess.isalpha():
+                if guess == city_to_guess:
+                    print(f"Congratulations! You guessed the city correctly: {city_to_guess}")
+                    return
+                else:
+                    print("Incorrect guess. Try again.")
+                    attempts -= 1
+            else:
+                for letter in guess:
+                    if letter not in guessed_letters:
+                        if letter in city_to_guess:
+                            print(f"Good guess! '{letter}' is in the word.")
+                            guessed_letters.append(letter)
+                        else:
+                            print(f"Sorry, '{letter}' is not in the word.")
+                            attempts -= 1
+                    else:
+                        print(f"You already guessed '{letter}'. Try again.")
+        else:
+            print("Invalid input. Please enter a valid letter or the whole word.")
 
-The game incorporates a systematic sequence of logical steps to ensure smooth navigation. The user is guided with clear instructions at each stage, facilitating a better understanding of the required inputs and aiding in decision-making. Additionally, every user action prompts a corresponding response, providing feedback in either a positive or negative manner.The game's overall logic is outlined in the following general flowchart, illustrating the key steps and interactions within the gameplay.
+        if set(city_to_guess) <= set(guessed_letters):
+            print(f"Congratulations! You guessed the city correctly: {city_to_guess}")
+            return
 
-The game is crafted to adopt a subtly more user-friendly visual scheme. Distinct line designs mark significant shifts in the game, including the commencement and conclusion of each round, after every attempt, and when presenting the game rules. Furthermore, the inclusion of new lines at the conclusion of each message facilitates user interaction, allowing them to initiate a new game or exit at their convenience.
+    if attempts == 0:
+        print(f"Sorry, you ran out of attempts. The correct city was: {city_to_guess}")
 
-![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9de26be3-dae1-4ba7-ae1b-97f2cc2ccbb8)
+if __name__ == "__main__":
+    cities_file_path = 'cities.json'
+    cities = load_cities_from_json(cities_file_path)
 
+    player_name = input("Set your name: ")
 
-## Features
+    if not player_name:
+        player_name = "Guest"
+        print("No name provided. Defaulting to Guest.")
 
-
-## Technologies
-### Programming Language
-- [Python 3.8.11]([url](https://www.python.org/))
-### Tools
-- [Gitpod]([url](https://gitpod.io/new)): Version control was implemented through the Gitpod terminal, allowing for seamless committing to Git and pushing changes to GitHub.
-- [Github]([url](https://github.com/)): Utilized for managing the Gitpod terminal, executing Git commits, and pushing changes to GitHub.
-- [Heroku]([url](https://id.heroku.com/login)): Was used to deploy the project.
-- [draw.io]([url](https://app.diagrams.net/)): Was used to draw the flowchart.
-
-## Deployment
-
-
-## Testing
-
-
-
-## Credit
-
-
-
-
-
-
-
-
-
+    print(f"Welcome, {player_name}, to Hangman - Guess the City in Germany!")
+    
+    while True:
+        print_rules()
+        play_hangman(cities)
+        play_again = input("Do you want to play again? (Y/N): ").lower()
+        if play_again != 'y':
+            break

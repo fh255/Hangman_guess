@@ -69,6 +69,7 @@ def play_hangman(cities):
     """
     city_to_guess = choose_random_city(cities)
     guessed_letters = []
+    wrong_letters=[]
     attempts = 6
 
     print("Here's a hint: First two letters are", city_to_guess[:2])
@@ -93,8 +94,12 @@ def play_hangman(cities):
                 print("Good guess!")
                 guessed_letters.append(guess)
             else:
-                print("Incorrect guess. Try again.")
-                attempts -= 1
+                if guess in wrong_letters:
+                    print("You already guessed that incorrect letter. Try again.")
+                else:
+                    print("Incorrect guess. Try again.")
+                    attempts -= 1
+                    wrong_letters.append(guess)
         elif guess.isalpha():  # Multiple letters or whole word guess
             if len(guess) == len(city_to_guess) and guess.isalpha():
                 if guess == city_to_guess:

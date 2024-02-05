@@ -9,7 +9,7 @@ def load_cities_from_json(file_path):
     - file_path (str): The path to the JSON file containing city data.
 
     Returns:
-    - list: A list of city names.
+    - list: List of city names.
     """
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -78,7 +78,7 @@ def play_hangman(cities):
         print("\nAttempts left:", attempts)
         print("Current Word:", display_word(city_to_guess, guessed_letters))
 
-        guess = input("Enter a letter (or the whole word at once), type '0' to exit, or '1' for a new game: ").upper()
+        guess = input("Enter a letter (or the whole word at once),\n type '0' to exit, or '1' for a new game: ").upper()
 
         if guess == '0':
             print("Exiting the game.")
@@ -128,6 +128,7 @@ def play_hangman(cities):
 
     if attempts == 0:
         print(f"Sorry, you ran out of attempts. The correct city was: {city_to_guess}")
+
 
 if __name__ == "__main__":
     cities_file_path = 'cities.json'

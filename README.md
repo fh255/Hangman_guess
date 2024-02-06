@@ -88,6 +88,25 @@ The game's logic is visually depicted in a general flowchart, with modifications
 - [Heroku](https://dashboard.heroku.com/apps): Deployed the application and furnished an environment for code execution.
 
 
+## Testing
+
+### Manual Testing
+- Successfully underwent CI Python Linter checks, ensuring the absence of lingering issues.
+- Tested via both the Gitpod and Heroku terminals, encompassing a diverse array of valid and invalid inputs, as well as repeating the same inputs for comprehensive verification.
+
+### Validator
+- [PEP8 Python Validator](https://pep8ci.herokuapp.com/): This program is now error-free, having undergone thorough testing and validation, ensuring the absence of any lingering issues.
+   <img width="1259" alt="PP8" src="https://github.com/fh255/Hangman_guess/assets/34744096/07816521-2f5d-4c51-a042-8692e7cfcbfd">
+
+  
+## Deployment
+
+### Deploy with Herokuapp
+The deployments conducted manually through the terminal.
+#### For initiating a new deployment or creating a new app
+Execute the command ` heroku login -i` and log in with your email and password as prompted. Subsequently, run `heroku create your_app_name_here` to establish a new app, substituting "your_app_name_here" with your desired app name. This process generates a new Heroku app and associates it with your Gitpod terminal. You can manage the app through the Heroku dashboard and configure your environment variables.
+#### In case you already have an existing app configured for automatic deploys
+Initiate the command `heroku login -i` and log in with your email and password when prompted. Then, execute `heroku git:remote -a your_app_name_here`, replacing "your_app_name_here" with your Heroku app's name. This step establishes the connection between the app and your Gitpod terminal.
 
 
 

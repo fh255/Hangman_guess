@@ -49,9 +49,43 @@ The game's logic is visually depicted in a general flowchart, with modifications
 
 ![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9309b0df-3d22-4065-9fd4-ee004ecc49e7)
 
+## Feature
 
+- At the commencement of the game, the player will be prompted to create a username. Upon entering a name, a welcoming message, along with the rules of the game, will appear on the screen.
 
+  <img width="659" alt="rules" src="https://github.com/fh255/Hangman_guess/assets/34744096/94322919-0450-4d76-82e1-69c344e75f35">
 
+- If the user does not provide a username, it will default to "Guest," and the system will generate a welcoming message along with the game rules on thescreen.
+
+   <img width="643" alt="Screenshot 2024-02-05 at 16 36 18" src="https://github.com/fh255/Hangman_guess/assets/34744096/fc758606-22a9-4b27-b11c-53788ed0fb49">
+
+- The initial two letters of the secret word will be selected and displayed on the screen as a hint.
+
+   <img width="500" alt="first 2 letter" src="https://github.com/fh255/Hangman_guess/assets/34744096/e407fa2a-21c1-49d2-b2c3-0dab969df1d5">
+- The user has the option to guess either a single letter, multiple letters, or the entire city name.
+  
+   <img width="728" alt="multiple letter" src="https://github.com/fh255/Hangman_guess/assets/34744096/d5be7f5c-6db8-4601-9648-726ef5025e8a">
+
+   <img width="728" alt="correct word guess" src="https://github.com/fh255/Hangman_guess/assets/34744096/0990b425-cfeb-439f-98cd-58f557924f10">
+
+   
+- If the user repeatedly guesses the same letter, whether correct or incorrect, a message will appear on the screen stating, "You already guessed this letter . Try again." Additionally, with each incorrect letter, the number of attempts will decrement by one.
+ 
+   <img width="728" alt="same letter guess" src="https://github.com/fh255/Hangman_guess/assets/34744096/a7394e91-07aa-4ffd-abb0-40dc37cbecd8">
+
+- At any point in the game, the user can exit by pressing 0. Likewise, they have the option to initiate a new game by pressing 1.
+
+<img width="728" alt="exiting game" src="https://github.com/fh255/Hangman_guess/assets/34744096/b6a38956-fccb-4b6c-a21a-66ad7692cbb8">
+
+## Technology
+### Programming Language
+- [Python 3.12.1](https://www.python.org/)
+
+### Tools
+- [Git](https://git-scm.com/) : Gitpod terminal was employed for version control, facilitating Git commits and GitHub pushes.
+- [Github](https://github.com/) : Following its transfer from Git, the code was utilized as the designated repository for the project.
+- [draw.io ](https://app.diagrams.net/): Utilized for crafting the game's flowchart.
+- [Heroku](https://dashboard.heroku.com/apps): Deployed the application and furnished an environment for code execution.
 
 
 

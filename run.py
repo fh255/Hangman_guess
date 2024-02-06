@@ -1,6 +1,7 @@
 import json
 import random
 
+
 def load_cities_from_json(file_path):
     """
     Loads a list of cities in Germany from a JSON file.
@@ -15,9 +16,10 @@ def load_cities_from_json(file_path):
         data = json.load(file)
         return data["cities"]
 
+
 def choose_random_city(cities):
     """
-    Chooses a random city from the given list of cities and converts it to uppercase.
+    Chooses a random city from the list of cities and converts it to uppercase.
 
     Parameters:
     - cities (list): List of city names.
@@ -27,9 +29,11 @@ def choose_random_city(cities):
     """
     return random.choice(cities).upper()
 
+
 def display_word(word, guessed_letters):
     """
-    Generates a display string for the word, with guessed letters revealed and others as underscores.
+    Generates a display string for the word,
+    with guessed letters revealed and others as underscores.
 
     Parameters:
     - word (str): The word to be displayed.
@@ -46,6 +50,7 @@ def display_word(word, guessed_letters):
             display += "_ "
     return display
 
+
 def print_rules():
     """
     Prints the rules for the Hangman game.
@@ -54,11 +59,12 @@ def print_rules():
     print("1. You need to guess the name of a city in Germany.")
     print("2. You can guess a single letter or the entire word.")
     print("3. You have 6 attempts to guess the word.")
-    print("4. If you guess a letter correctly, it will be revealed in the word.")
+    print("4. Correctly guessed letters will be revealed in the word.")
     print("5. If you guess the entire word correctly, you win!")
     print("6. If you run out of attempts, the correct city will be revealed.")
-    print("7. At any point, you can type '0' to exit or '1' to start a new game.")
+    print("7. At any point,you can type '0' to exit or '1' to start new game.")
     print("8. Have fun and enjoy the game!\n")
+
 
 def play_hangman(cities):
     """
@@ -69,7 +75,7 @@ def play_hangman(cities):
     """
     city_to_guess = choose_random_city(cities)
     guessed_letters = []
-    wrong_letters=[]
+    wrong_letters = []
     attempts = 6
 
     print("Here's a hint: First two letters are", city_to_guess[:2])
@@ -78,7 +84,8 @@ def play_hangman(cities):
         print("\nAttempts left:", attempts)
         print("Current Word:", display_word(city_to_guess, guessed_letters))
 
-        guess = input("Enter a letter (or the whole word at once),\n type '0' to exit, or '1' for a new game: ").upper()
+        guess = input("Enter a letter (or the whole word at once),\n"
+                      "type '0' to exit, or '1' for a new game: ").upper()
 
         if guess == '0':
             print("Exiting the game.")
@@ -95,7 +102,7 @@ def play_hangman(cities):
                 guessed_letters.append(guess)
             else:
                 if guess in wrong_letters:
-                    print("You already guessed that incorrect letter. Try again.")
+                    print("You already guessed that letter. Try again.")
                 else:
                     print("Incorrect guess. Try again.")
                     attempts -= 1
@@ -120,7 +127,7 @@ def play_hangman(cities):
                     else:
                         print(f"You already guessed '{letter}'. Try again.")
         else:
-            print("Invalid input. Please enter a valid letter or the whole word.")
+            print("Invalid input. Please enter a valid letter or whole word.")
 
         if set(city_to_guess) <= set(guessed_letters):
             print(f"Congratulations! You guessed the city correctly: {city_to_guess}")
@@ -134,7 +141,7 @@ if __name__ == "__main__":
     cities_file_path = 'cities.json'
     cities = load_cities_from_json(cities_file_path)
 
-    player_name = input("Set your name (You can use both letters and numbers) : ")
+    player_name = input("Set your name (You can use both letters & numbers):")
 
     if not player_name:
         player_name = "Guest"

@@ -110,7 +110,8 @@ def play_hangman(cities):
         elif guess.isalpha():  # Multiple letters or whole word guess
             if len(guess) == len(city_to_guess) and guess.isalpha():
                 if guess == city_to_guess:
-                    print(f"Congratulations! You guessed the city correctly: {city_to_guess}")
+                    print(f"Congratulations! \
+                         You guessed the city correctly: {city_to_guess}")
                     return
                 else:
                     print("Incorrect guess. Try again.")
@@ -130,11 +131,13 @@ def play_hangman(cities):
             print("Invalid input. Please enter a valid letter or whole word.")
 
         if set(city_to_guess) <= set(guessed_letters):
-            print(f"Congratulations! You guessed the city correctly: {city_to_guess}")
+            print(f"Congratulations! \
+                 You guessed the city correctly: {city_to_guess}")
             return
 
     if attempts == 0:
-        print(f"Sorry, you ran out of attempts. The correct city was: {city_to_guess}")
+        print(f"Sorry, you ran out of attempts.\
+             The correct city was: {city_to_guess}")
 
 
 if __name__ == "__main__":
@@ -148,10 +151,12 @@ if __name__ == "__main__":
         print("No name provided. Defaulting to Guest.")
 
     print(f"Welcome, {player_name}, to Hangman - Guess the City in Germany!")
-    
+
     while True:
         print_rules()
         play_hangman(cities)
         play_again = input("Do you want to play again? (Y/N): ").lower()
         if play_again != 'y':
             break
+
+# The game end here

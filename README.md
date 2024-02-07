@@ -47,7 +47,9 @@ The game incorporates a sequence of logical steps to facilitate seamless navigat
 
 The game's logic is visually depicted in a general flowchart, with modifications introduced during the programming and testing phases. The design prioritizes a more user-friendly visual structure, featuring distinct line patterns at pivotal moments in the game: the start, end, each attempt, and when presenting the rules. Additionally, new lines are strategically inserted at the conclusion of each message to prevent screen overload.
 
-![Hangman](https://github.com/fh255/Hangman_guess/assets/34744096/9309b0df-3d22-4065-9fd4-ee004ecc49e7)
+![Hangama_city](https://github.com/fh255/Hangman_guess/assets/34744096/4d7ae69d-bd04-4015-b9e3-d774e759a8ed)
+
+At any stage of the game, the player has the option to exit by pressing '0' or initiate a new game by pressing '1'. This aspect is not represented in the flowchart.
 
 ## Feature
 

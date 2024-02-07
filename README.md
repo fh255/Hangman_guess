@@ -16,8 +16,8 @@ Welcome to "**Hangman: Guess the Cities in Germany**" – a captivating and educ
   - Structure
 - Features
 - Technologies
-- Deployment
 - Testing
+- Deployment
 - Credit
 
 ## User Story
@@ -111,7 +111,14 @@ The deployments conducted manually through the Herokuapp.
 - Proceed to the next step by adding two Buildpacks (Python and Node.js) to the application. In the deploy section, opt for GitHub as the deployment method and confirm the connection to GitHub. Specify the GitHub repository's name, search for it, and establish the link between the Heroku app and the GitHub repository.
 - Select the Manual deploy option. Following the installation of Python, its dependencies, and various packages, a success message declaring "the app was successfully deployed" will appear on the screen, along with the deployed link.
 
+## Credit
+- I acquired knowledge of Python codes from diverse sources such as W3Schools, MDN Web Docs and TutorialsPoint.
+- The idea for the Hangman Game's model originated from the Python for Beginners source.
+- Gratitude to my mentor **Brian Macharia** for providing consistent support and valuable feedback.
+-  Appreciation also extends to the readily available tutor assistance, accessible at any working hour.
 
+## Acknowledgments
+As part of my journey with [Code Institute](https://learn.codeinstitute.net/dashboard), I developed this game as my third project.
 
 
 

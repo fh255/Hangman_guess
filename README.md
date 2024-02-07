@@ -10,15 +10,15 @@ Welcome to "**Hangman: Guess the Cities in Germany**" – a captivating and educ
 
 ## Index
 
-* User Story
+- User Story
   - Objective
   - Extent
   - Structure
-* Features
-* Technologies
-* Deployment
-* Testing
-* Credit
+- Features
+- Technologies
+- Deployment
+- Testing
+- Credit
 
 ## User Story
 
@@ -102,11 +102,14 @@ The game's logic is visually depicted in a general flowchart, with modifications
 ## Deployment
 
 ### Deploy with Herokuapp
-The deployments conducted manually through the terminal.
-#### For initiating a new deployment or creating a new app
-Execute the command ` heroku login -i` and log in with your email and password as prompted. Subsequently, run `heroku create your_app_name_here` to establish a new app, substituting "your_app_name_here" with your desired app name. This process generates a new Heroku app and associates it with your Gitpod terminal. You can manage the app through the Heroku dashboard and configure your environment variables.
-#### In case you already have an existing app configured for automatic deploys
-Initiate the command `heroku login -i` and log in with your email and password when prompted. Then, execute `heroku git:remote -a your_app_name_here`, replacing "your_app_name_here" with your Heroku app's name. This step establishes the connection between the app and your Gitpod terminal.
+The deployments conducted manually through the Herokuapp.
+#### Creating new account in Herokuapp
+- To access the Heroku app, begin by registering for a free account and completing the sign-up form. Afterward, Heroku will send you an email containing a link. Upon clicking the link, you will be redirected to a page where you can set up your password. Following password setup, a page with a button labeled "Click here to proceed" will appear. Upon accepting the terms of service, the dashboard will become accessible.
+ 
+#### Creating new app and Deploy
+- To initiate the creation of a new app, click on the "Create new app" button. Provide the app's name and select the desired region. Prior to deployment, navigate to the Settings tab. Access the "Config Vars" section, where confidential data is stored. In the key field, enter the JSON file name in uppercase. Move to the workspace, copy the entire JSON file, paste it in the value field, and click the add button to include all the data.
+- Proceed to the next step by adding two Buildpacks (Python and Node.js) to the application. In the deploy section, opt for GitHub as the deployment method and confirm the connection to GitHub. Specify the GitHub repository's name, search for it, and establish the link between the Heroku app and the GitHub repository.
+- Select the Manual deploy option. Following the installation of Python, its dependencies, and various packages, a success message declaring "the app was successfully deployed" will appear on the screen, along with the deployed link.
 
 
 

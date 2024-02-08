@@ -119,6 +119,28 @@ Verify that the various components of the application function as intended throu
   
 ## Deployment
 
+### Cloning the github repository
+
+- Open the GitHub repository you want to clone and click on the green "Code" button.
+- Copy the repository URL provided (either HTTPS or SSH).
+- Launch the Git Bash terminal.
+- Navigate to the desired directory where you intend to store the cloned repository.
+- Enter the command `git clone `, and then paste the previously copied URL. Press Enter to initiate the cloning process.
+- To sync any modifications made in the local clone with the repository, utilize the subsequent steps.
+```
+a. Revise the code as necessary.
+b. Access the terminal and execute git add . (or specify file_name).
+c. Enter git commit -m "concise description of the modification".
+d. Execute git push to upload the changes. 
+```
+
+
+### Forking the Github repository
+By initiating a GitHub Repository fork, you can duplicate the original repository in your personal GitHub account. This allows you to review or implement changes without impacting the original repository.
+- Navigate to the [GitHub repository](https://github.com/fh255/Hangman_guess) for the website.
+- Located at the top of the Repository, you will find a "Fork" button.
+- You should now possess a fresh copy of the initial repository within your own GitHub account.
+
 ### Deploy with Herokuapp
 The deployments conducted manually through the Herokuapp.
 #### Creating new account in Herokuapp

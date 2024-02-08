@@ -16,8 +16,16 @@ Welcome to "**Hangman: Guess the Cities in Germany**" – a captivating and educ
   - Structure
 - Features
 - Technologies
+  - Programming Language
+  - Tools
 - Testing
+  - Functional Testing
+  - Manual Testing
+  - Validator
 - Deployment
+  - Cloning the github repository
+  - Forking the github repository
+  - Validator
 - Credit
 
 ## User Story
@@ -93,6 +101,7 @@ At any stage of the game, the player has the option to exit by pressing '0' or i
 
 ## Testing
 
+### Functional Testing
 Verify that the various components of the application function as intended through functional testing.
 
 | Test Label            | Test Action                                                                                                                                           | Expected Outcome                                                                                                                                           | Test Outcome |

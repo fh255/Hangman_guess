@@ -157,6 +157,6 @@ if __name__ == "__main__":
         play_hangman(cities)
         play_again = input("Do you want to play again? (Y/N): ").lower()
         if play_again != 'y':
-            break
+            exit()
 
 # The game end here

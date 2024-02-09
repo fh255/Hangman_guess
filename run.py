@@ -56,9 +56,9 @@ def print_rules():
     Prints the rules for the Hangman game.
     """
     print("\nRules for Hangman - Guess the City in Germany:")
-    print("1. You need to guess the name of a city in Germany.")
+    print("1. You need to deduce the name of a city in Germany.")
     print("2. You can guess a single letter or the entire word.")
-    print("3. You have 6 attempts to guess the word.")
+    print("3. You have six opportunities to deduce the correct word.")
     print("4. Correctly guessed letters will be revealed in the word.")
     print("5. If you guess the entire word correctly, you win!")
     print("6. If you run out of attempts, the correct city will be revealed.")
@@ -158,5 +158,3 @@ if __name__ == "__main__":
         play_again = input("Do you want to play again? (Y/N): ").lower()
         if play_again != 'y':
             exit()
-
-# The game end here
